@@ -1,0 +1,26 @@
+JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。它基于JavaScript的一个子集。 JSON采用完全独立于语言的文本格式，但是也使用了类似于C语言家族的习惯。这些特性使JSON成为理想的数据交换语言。易于人阅读和编写，同时也易于机器解析和生成。
+
+json实例
+var person={ "people": [
+　　{ "firstName": "Brett", "lastName":"McLaughlin", "email": "aaaa" },
+　　{ "firstName": "Jason", "lastName":"Hunter", "email": "bbbb"},
+　　{ "firstName": "Elliotte", "lastName":"Harold", "email": "cccc" }
+　　]}
+数据访问：email=person.people[0].email;
+数据修改：person.people[0].email="dddd";
+在这个示例中，只有一个名为 people的变量，值是包含三个条目的数组，每个条目是一个人的记录，其中包含名、姓和电子邮件地址。
+
+php对json的操作
+json_decode()---对json格式的字符串进行编码
+json_encode()---对变量进行json编码
+json_last_error()---返回json的上一次错误
+
+js对json的操作
+var str='{"name":"wang","sex":"man"}';//json字符串
+var obj=eval(str);//一般用这个js自带的函数   或
+var obj=str.parseJSON(str);或
+var obj=JSON.parse(str);//用于ajax传来的数据解析
+
+var obj={"name":"wang","sex":"man"};//json对象
+var str=JSON.stringify(obj);//一般用这个
+var str=obj.toJSONString();
